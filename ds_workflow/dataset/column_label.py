@@ -6,12 +6,15 @@ from collections import namedtuple
 AcceptableAttributes = namedtuple('Attribute', ['type', 'values'])
 
 COLUMN_VALUES = {
-    'category': AcceptableAttributes(str, ['categorical', 'numeric', 'text', 'date/time']),
-    'type': AcceptableAttributes(str, ['int', 'float', 'str', 'date', 'time', 'datetime']),
+    'category': AcceptableAttributes(str, ['categorical', 'numeric', 'text', 'datetime']),
+    'type': AcceptableAttributes(str, ['int', 'float', 'str', 'datetime']),
     'is_active': AcceptableAttributes(bool, [True, False])
 }
 
-NAME_TYPES_MAP = {'str': str, 'float': float, 'int': int, 'date': dt.date, 'time': dt.time, 'datetime': dt.datetime}
+NAME_TYPES_MAP = {'str': str, 'float': float, 'int': int, 'datetime': dt.datetime}
+
+CATEGORY_MAP = {object: 'categorical', np.object_: 'categorical', str: 'categorical', int: 'numeric',
+                np.int64: 'numeric', float: 'numeric', np.float64: 'numeric', dt.datetime: 'datetime'}
 
 # first element in 'category' will be default after data type successfully casted
 CAST_MAP = {
@@ -33,27 +36,19 @@ CAST_MAP = {
     },
     str: {
         'category': ['categorical', 'text'],
-        'type': [int, float, dt.date, dt.time, dt.datetime]
+        'type': [int, float, dt.datetime]
     },
     object: {
         'category': ['categorical', 'text'],
-        'type': [int, float, dt.date, dt.time, dt.datetime]
+        'type': [int, float, dt.datetime]
     },
     np.object_: {
         'category': ['categorical', 'text'],
-        'type': [int, float, dt.date, dt.time, dt.datetime]
-    },
-    dt.date: {
-        'category': ['date/time'],
-        'type': [int]   # i.e. cast to number of days since x time
-    },
-    dt.time: {
-        'category': ['date/time'],
-        'type': [int]
+        'type': [int, float, dt.datetime]
     },
     dt.datetime: {
-        'category': ['date/time'],
-        'type': [int, dt.date, dt.time]
+        'category': ['datetime'],
+        'type': [int]
     }
 }
 
@@ -64,9 +59,9 @@ class ColumnLabel:
     Attributes
     ----------
     category : str
-        Data category, can be 'categorical', 'numeric', 'text', or 'date/time'.
+        Data category, can be 'categorical', 'numeric', 'text', or 'datetime'.
     type : str
-        Data type, can be 'int', 'float', 'str', 'date', 'time', or 'datetime'.
+        Data type, can be 'int', 'float', 'str', or 'datetime'.
     is_active : bool
         If the column is enabled by the user.
 
@@ -87,7 +82,7 @@ class ColumnLabel:
     def __setattr__(self, key, value):
         acceptable_type = COLUMN_VALUES[key].type
         if not isinstance(value, acceptable_type):
-            raise ValueError(f"'{key}' must be of type '{acceptable_type.__name__}'.")
+            raise TypeError(f"'{key}' must be of type '{acceptable_type.__name__}'.")
 
         acceptable_values = COLUMN_VALUES[key].values
         if value not in acceptable_values:
