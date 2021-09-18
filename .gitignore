@@ -9,3 +9,9 @@ __pycache__/
 
 # logs
 logs/
+
+# virtual environment
+env/
+
+# data files
+data/
