@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ds_workflow.dataset package &#8212; ds_workflow  documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to ds_workflow’s documentation!" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">ds_workflow  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ds_workflow.dataset package
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ds_workflow.dataset.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-ds_workflow.dataset.column_label">
+   ds_workflow.dataset.column_label module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-ds_workflow.dataset.dataset">
+   ds_workflow.dataset.dataset module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-ds_workflow.dataset.utils">
+   ds_workflow.dataset.utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-ds_workflow.dataset">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ds-workflow-dataset-package">
+<h1>ds_workflow.dataset package<a class="headerlink" href="#ds-workflow-dataset-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ds_workflow.dataset.column_label">
+<span id="ds-workflow-dataset-column-label-module"></span><h2>ds_workflow.dataset.column_label module<a class="headerlink" href="#module-ds_workflow.dataset.column_label" title="Permalink to this headline">¶</a></h2>
+<dl class="py attribute">
+<dt id="ds_workflow.dataset.column_label.AcceptableAttributes">
+<code class="sig-prename descclassname">ds_workflow.dataset.column_label.</code><code class="sig-name descname">AcceptableAttributes</code><a class="headerlink" href="#ds_workflow.dataset.column_label.AcceptableAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ds_workflow.dataset.column_label.Attribute</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="ds_workflow.dataset.column_label.ColumnLabel">
+<em class="property">class </em><code class="sig-prename descclassname">ds_workflow.dataset.column_label.</code><code class="sig-name descname">ColumnLabel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">category</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">is_active</span></em>, <em class="sig-param"><span class="n">is_target</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.column_label.ColumnLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Labels for Dataset columns, also used by Statistic and Algorithm.</p>
+<dl class="simple">
+<dt>category<span class="classifier">str</span></dt><dd><p>Data category, can be ‘categorical’, ‘numeric’, ‘text’, or ‘date/time’.</p>
+</dd>
+<dt>type<span class="classifier">str</span></dt><dd><p>Data type, can be ‘int’, ‘float’, ‘str’, ‘date’, ‘time’, or ‘datetime’.</p>
+</dd>
+<dt>is_active<span class="classifier">bool</span></dt><dd><p>If the column is enabled by the user.</p>
+</dd>
+<dt>is_target<span class="classifier">bool</span></dt><dd><p>Is the column is the target variable.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>category_type_match()</dt><dd><p>Checks that the column’s category and type are an acceptable match. Raises a ValueError if not.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="ds_workflow.dataset.column_label.ColumnLabel.category_type_match">
+<code class="sig-name descname">category_type_match</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.column_label.ColumnLabel.category_type_match" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ds_workflow.dataset.dataset">
+<span id="ds-workflow-dataset-dataset-module"></span><h2>ds_workflow.dataset.dataset module<a class="headerlink" href="#module-ds_workflow.dataset.dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt id="ds_workflow.dataset.dataset.DataTypeNotFound">
+<em class="property">exception </em><code class="sig-prename descclassname">ds_workflow.dataset.dataset.</code><code class="sig-name descname">DataTypeNotFound</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.dataset.DataTypeNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeError</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="ds_workflow.dataset.dataset.Dataset">
+<em class="property">class </em><code class="sig-prename descclassname">ds_workflow.dataset.dataset.</code><code class="sig-name descname">Dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">labels</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">is_derived</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.dataset.Dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Dataset manages a data’s labels, transformations, and train-test split. It interfaces with Statistic
+and Model, not in use yet.</p>
+<dl class="simple">
+<dt>path<span class="classifier">str</span></dt><dd><p>Path to data file.</p>
+</dd>
+<dt>labels<span class="classifier">dict or None</span></dt><dd><p>Dictionary of dictionaries with column name (str), dictionary pairs. The second dictionary will use keys
+‘category’, ‘type’, ‘is_active’, and ‘is_target’. Values passed will be validated and stored by ColumnLabel. If
+no dictionary is passed, these values are automatically generated.</p>
+</dd>
+<dt>is_derived<span class="classifier">bool</span></dt><dd><p>Not in use yet.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>path<span class="classifier">str</span></dt><dd><p>Path to data file.</p>
+</dd>
+<dt>df<span class="classifier">pandas.DataFrame</span></dt><dd><p>Stores data as a pandas dataframe.</p>
+</dd>
+<dt>split_dataset<span class="classifier">dict of lists</span></dt><dd><p>Keys are ‘train’, ‘test’, and optionally ‘validate’ (str). Values are lists of indices.</p>
+</dd>
+<dt>is_split<span class="classifier">bool</span></dt><dd><p>True if has been train-test split, False otherwise.</p>
+</dd>
+<dt>is_derived<span class="classifier">bool</span></dt><dd><p>Not in use yet.</p>
+</dd>
+<dt>labels<span class="classifier">dict of ColumnLabels (namedtuples)</span></dt><dd><p>Keys are column names (str), values are ColumnLabels, containing category (str), type (type), is_active (bool),
+and is_target (bool).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="ds_workflow.dataset.dataset.Dataset.auto_assign">
+<code class="sig-name descname">auto_assign</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.dataset.Dataset.auto_assign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically assign a column a category and type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ds_workflow.dataset.dataset.Dataset.auto_category">
+<code class="sig-name descname">auto_category</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col_type</span></em>, <em class="sig-param"><span class="n">col_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.dataset.Dataset.auto_category" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically assigns a category to a column based on its data type. If it is a string and the length of the
+first value is greater than or equal to 20, then it categorizes the column as ‘text’ instead of ‘categorical’.
+This method uses CATEGORY_MAP from the column_label module.</p>
+<p>col_type : type
+col_name : str</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ds_workflow.dataset.dataset.Dataset.auto_type">
+<code class="sig-name descname">auto_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.dataset.Dataset.auto_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches passed column’s values for its data type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="ds_workflow.dataset.dataset.Dataset.validate_column_name">
+<code class="sig-name descname">validate_column_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">col_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.dataset.Dataset.validate_column_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks for column name in Dataset.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ds_workflow.dataset.utils">
+<span id="ds-workflow-dataset-utils-module"></span><h2>ds_workflow.dataset.utils module<a class="headerlink" href="#module-ds_workflow.dataset.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="ds_workflow.dataset.utils.get_project_root">
+<code class="sig-prename descclassname">ds_workflow.dataset.utils.</code><code class="sig-name descname">get_project_root</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ds_workflow.dataset.utils.get_project_root" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-ds_workflow.dataset">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ds_workflow.dataset" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Welcome to ds_workflow’s documentation!</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Alena McLucas<br/>
+        
+            &copy; Copyright 2021, Alena McLucas.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
